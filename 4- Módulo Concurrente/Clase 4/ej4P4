@@ -1,0 +1,97 @@
+programa P4E4
+procesos
+  proceso buscarPapel(E avenida, E calle, ES hayPapel)
+  comenzar
+    BloquearEsquina(11,11)
+    Pos(11,11)
+    si(HayPapelEnLaEsquina)
+      tomarPapel
+    sino
+      hayPapel:=F
+    Pos(avenida,calle)
+    LiberarEsquina(11,11)
+  fin
+  
+areas
+  area1:AreaP(4,1,4,100)
+  area2:AreaP(6,1,6,100)
+  area3:AreaP(8,1,8,100)
+  area4:AreaP(10,1,10,100)
+  esquina:AreaPC(11,11,11,11)
+  
+robots
+  robot tipo1
+  variables
+    r:numero
+    hayPapel:boolean
+  comenzar
+    si(PosAv=4)
+      r:=1
+    sino(PosAv=6)
+      r:=2
+    sino(PosAv=8)
+      r:=3
+    sino(PosAv=10)
+      r:=4
+    hayPapel=V
+    derecha
+    mientras(hayPapel)&(calle<100)
+      buscarPapel(PosAv,PosCa,hayPapel)
+      si(hayPapel)
+        mover
+   EnviarMensaje(r,robotC)
+   EnviarMensaje(PosCa,robotC)
+  fin
+  
+  robot tipo2
+  variables
+    aux,max,ganador:numero
+  comenzar
+   max:=0
+   RecibirMensaje(aux,*)
+   si(aux=1)
+     RecibirMensaje(aux,robot1)
+     si(aux>max)
+       max:=aux
+       ganador:=1
+   sino(aux=2)
+     RecibirMensaje(aux,robot2)
+     si(aux>max)
+       max:=aux
+       ganador:=2
+   sino(aux=3)
+     RecibirMensaje(aux,robot3)
+     si(aux>max)
+       max:=aux
+       ganador:=3
+       Informar(ganador)
+   sino(aux=4)
+     RecibirMensaje(aux,robot4)
+     si(aux>max)
+       max:=aux
+       ganador:=4
+   Informar(ganador)
+  fin
+  
+variables
+  robot1,robot2,robot3,robot4:tipo1
+  robotC:tipo2
+  
+comenzar
+  AsignarArea(robot1,area1)
+  AsignarArea(robot2,area2)
+  AsignarArea(robot3,area3)
+  AsignarArea(robot4,area4)
+  
+  AsignarArea(robot1,esquina)
+  AsignarArea(robot2,esquina)
+  AsignarArea(robot3,esquina)
+  AsignarArea(robot4,esquina)
+  
+  Iniciar(robotC,1,1)
+  Iniciar(robot1,4,1)
+  Iniciar(robot2,6,1)
+  Iniciar(robot3,8,1)
+  Iniciar(robot4,10,1)
+fin
+

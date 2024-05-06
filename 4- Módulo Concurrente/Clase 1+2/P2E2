@@ -1,0 +1,46 @@
+programa ej2P2
+procesos
+  proceso recolectarFlores(ES cantSF:numero)
+  comenzar
+    si(HayFlorEnLaEsquina)
+      mientras(HayFlorEnLaEsquina)
+        tomarFlor
+    sino
+      cantSF:=cantSF+1
+  fin 
+  proceso avenida(ES cantSF:numero;ES cantF:numero)
+  comenzar
+    repetir 99
+      recolectarFlores(cantSF)
+      mover
+    recolectarFlores(cantSF)
+    mientras(HayFlorEnLaBolsa)
+      depositarFlor
+      cantF:=cantF+1
+    Informar(cantF)
+    Informar(cantSF)
+  fin
+areas
+  ciudad:AreaP(1,1,10,100)  
+robots
+  robot tipo1
+  variables
+    cantSF:numero
+    cantF:numero
+  comenzar
+    repetir 4
+      cantSF:=0
+      cantF:=0
+      avenida(cantSF,cantF)
+      Pos(PosAv+2,1)
+    cantSF:=0
+    cantF:=0
+    avenida(cantSF,cantF)
+  fin  
+variables
+  robot1:tipo1
+comenzar
+  AsignarArea(robot1,ciudad)
+  Iniciar(robot1,1,1)
+fin
+
