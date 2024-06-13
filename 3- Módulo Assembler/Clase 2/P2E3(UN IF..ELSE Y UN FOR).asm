@@ -1,4 +1,4 @@
-----INCISO A----
+; ----INCISO A----
 
       ORG 2000h
       CMP AL,4
@@ -13,7 +13,7 @@ FIN:  HLT
 
 
 
-----INCISO B----
+; ----INCISO B----
 
       ORG 2000h
       MOV AL, 10
