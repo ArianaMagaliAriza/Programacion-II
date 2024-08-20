@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Responsable
+comment1.params=
+comment1.target=Responsable()
+comment2.params=DNI\ NYAuwu
+comment2.target=Responsable(int,\ java.lang.String)
+comment3.params=DNI
+comment3.target=void\ setDNI(int)
+comment4.params=NYAuwu
+comment4.target=void\ setNYAuwu(java.lang.String)
+comment5.params=
+comment5.target=int\ getDNI()
+comment6.params=
+comment6.target=java.lang.String\ getNYAuwu()
+numComments=7
