@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Alumno
+comment1.params=legajo\ NomApe
+comment1.target=Alumno(int,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ toString()
+numComments=3

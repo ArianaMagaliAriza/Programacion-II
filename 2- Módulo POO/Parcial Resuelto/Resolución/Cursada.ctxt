@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Cursada
+comment1.params=cod\ semestre\ alumno
+comment1.target=Cursada(java.lang.String,\ java.lang.String,\ Alumno)
+comment2.params=
+comment2.target=int\ getDiml()
+comment3.params=nota\ i
+comment3.target=void\ cargarNota(double,\ int)
+comment4.params=
+comment4.target=double\ calcularPromedio()
+numComments=5
